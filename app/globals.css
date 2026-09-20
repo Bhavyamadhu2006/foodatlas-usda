@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  background: #08120B;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: #F7F3E8;
+  background:
+    radial-gradient(circle at 6% -4%, rgba(121,169,107,.16), transparent 27%),
+    radial-gradient(circle at 96% 3%, rgba(87,139,78,.11), transparent 25%),
+    linear-gradient(180deg, #112617 0%, #0D1C11 46%, #08120B 100%);
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+::selection {
+  background: #79A96B;
+  color: #08120B;
+}
+
+@layer components {
+  .app-card {
+    @apply rounded-[28px] border border-forest-600/70 bg-forest-850/90 shadow-soft;
+  }
+
+  .app-card-soft {
+    @apply rounded-[22px] border border-forest-600/60 bg-forest-800/80;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-forest-500/70 bg-forest-800/80 px-3 py-2 text-[11px] font-extrabold uppercase tracking-[0.14em] text-forest-200;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-2xl bg-gradient-to-br from-forest-300 to-forest-500 px-5 py-3.5 text-[16px] font-extrabold text-forest-950 shadow-lg shadow-black/10 transition active:translate-y-px;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-2xl border border-forest-600 bg-forest-800 px-5 py-3.5 text-[16px] font-bold text-cream-50 transition active:translate-y-px;
+  }
+
+  .page-title {
+    @apply font-serif text-[38px] leading-[1.02] tracking-[-0.035em] text-cream-50 md:text-[48px];
+  }
+
+  .section-title {
+    @apply font-serif text-[28px] leading-tight tracking-[-0.025em] text-cream-50;
+  }
+
+  .muted {
+    @apply text-[15px] leading-6 text-forest-200/75;
+  }
+
+  .input {
+    @apply w-full rounded-2xl border border-forest-600 bg-forest-950/80 px-4 py-3.5 text-[17px] text-cream-50 outline-none placeholder:text-forest-300/45 focus:border-forest-400 focus:ring-2 focus:ring-forest-500/20;
+  }
+
+  .chip {
+    @apply inline-flex rounded-full border border-forest-600 bg-forest-800 px-3 py-1.5 text-[12px] font-semibold text-forest-200;
+  }
+}

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { imageForFoodName } from "@/lib/images";
+import FoodImage from "./FoodImage";
 
 type USDAFood = {
   fdcId: number;
@@ -60,7 +61,7 @@ export default function USDAFoodSearch() {
               key={food.fdcId}
               className="grid overflow-hidden rounded-[22px] border border-forest-600 bg-forest-950/30 sm:grid-cols-[140px_1fr_auto]"
             >
-              <img src={imageForFoodName(food.description)} alt="" className="h-44 w-full object-cover sm:h-full" />
+              <FoodImage src={imageForFoodName(food.description)} alt={food.description} className="h-44 w-full object-cover sm:h-full" />
               <div className="p-5">
                 <div className="text-[12px] font-extrabold uppercase tracking-[.12em] text-forest-300">{food.dataType || "USDA food"}</div>
                 <h3 className="mt-2 font-serif text-[29px] leading-[1.04] text-cream-50">{food.description}</h3>

@@ -2,6 +2,7 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { imageForFoodName } from "@/lib/images";
+import FoodImage from "./FoodImage";
 import PortionCalculator from "./PortionCalculator";
 import NutritionPills from "./NutritionPills";
 
@@ -36,7 +37,7 @@ export default function USDAFoodDetail({ fdcId }: { fdcId: string }) {
     <div className="space-y-6">
       <section className="app-card overflow-hidden">
         <div className="grid md:grid-cols-[.9fr_1.1fr]">
-          <img src={imageForFoodName(food.description || "food")} alt="" className="h-[320px] w-full object-cover md:h-full md:min-h-[470px]" />
+          <FoodImage src={imageForFoodName(food.description || "food")} alt={food.description || "USDA food"} className="h-[320px] w-full object-cover md:h-full md:min-h-[470px]" />
           <div className="p-6 md:p-9">
             <div className="eyebrow">{food.dataType || "USDA FoodData Central"}</div>
             <h1 className="page-title mt-4">{food.description}</h1>
